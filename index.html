@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rock Paper Scissors game using pure HTML, CSS and JavaScript">
+    <meta name="robots" content="index, follow">
+    <script src="https://kit.fontawesome.com/be7d9d633b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <section class="page-wrap">
+        <header class="header">
+            <h1 class="header__heading">Rock Paper Scissors Game</h1>
+        </header>
+        <section class="score">
+            <h3 class="score__heading">Score</h3>
+            <p class="score__numbers">0 - 0</p>
+        </section>
+        <section class="game">
+
+            <section class="modal">
+                <div class="modal-content">
+                    <h3 class="modal-content_header"></h3>
+                    <p class="modal-content_score"></p>
+                    <button class="button modal-content_button">Play Again</button>
+                </div>
+            </section>
+
+            <div class="avatar-holder">
+                <img class="avatar-holder__avatar" src="images/person.png" alt="player-icon">
+            </div>
+
+            <div class="move move_direction_right icon-holder_size_big">
+                <i class="move__icon move__icon_player_person far"></i>
+            </div>
+
+            <div class="play-result">
+                <h3 class="play-result__content"></h3>
+            </div>
+
+            <div class="move move_direction_left icon-holder_size_big">
+                <i class="move__icon move__icon_player_computer far"></i>
+            </div>
+
+            <div class="avatar-holder">
+                <img class="avatar-holder__avatar" src="images/computer.png" alt="computer-icon">
+            </div>
+
+            <button class="button button_move_rock icon-holder">
+                <i class="far fa-hand-rock"></i>
+            </button>
+
+            <button class="button button_move_paper icon-holder">
+                <i class="far fa-hand-paper"></i>
+            </button>
+
+            <button class="button button_move_scissors icon-holder">
+                <i class="icon_mirrorRotate_90deg far fa-hand-scissors"></i>
+            </button>
+        </section>
+        <section class="reset">
+            <button class="button reset_button">Reset</button>
+        </section>
+
+    </section>
+
+    <script src="scripts/rock_paper_scissors.js"></script>
+</body>
+
+</html>

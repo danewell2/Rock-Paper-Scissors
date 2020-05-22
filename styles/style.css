@@ -1,0 +1,294 @@
+:root {
+    --primary-color: #383B3E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Damion', cursive;
+    background: url('../images/paper001_3K_Color.png');
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+
+.page-wrap {
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+
+.header {
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.header__heading {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+/* Score section */
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
+
+.score__heading {
+    font-size: 2rem;
+}
+
+.score__numbers {
+    border: 1px solid var(--primary-color);
+    padding: 0 3rem;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+/* Game */
+
+.game {
+    display: grid;
+    position: relative;
+    padding: 1rem;
+    grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 2fr;
+    grid-template-rows: 1fr 0.5fr;
+    row-gap: 1rem;
+    grid-template-areas:
+    "none none none none none"
+    ". rock paper scissors ."
+}
+
+/* .game > * {
+    border: 1px solid black;
+} */
+
+.avatar-holder__avatar {
+    max-width: 100%;
+}
+
+.move {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+}
+
+
+.move__icon {
+    transition: color 0.5s ease-in-out;
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+.icon_rotate_90deg {
+    transform: rotate(90deg);
+}
+
+.icon_mirrorRotate_90deg {
+    transform: rotate(90deg) scaleY(-1);
+}
+
+.icon_transform_mirror {
+    transform: scalex(-1);
+}
+
+.icon_transform_none {
+    transform: none
+}
+
+
+.play-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.play-result__content {
+    font-size: 3rem;
+}
+
+.button {
+    background: transparent;
+    max-width: 100%;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    color: rgb(104, 110, 116);
+    border: 1px rgb(104, 110, 116) solid;
+    transform: translate3d(0, 0, 0);
+    transition: background 0.5s ease-in-out;
+}
+
+.button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #383B3E;
+    transform: scale(10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+}
+
+.button:hover {
+    color: #383B3E;
+    border-color: #383B3E;
+}
+
+.button:active:after {
+    transform: scale(0);
+    opacity: .3;
+    transition: 0s;
+}
+
+.button_move_rock {
+    grid-area: rock;
+}
+
+.button_move_paper{
+    grid-area: paper;
+}
+
+.button_move_scissors {
+    grid-area: scissors;
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.reset_button {
+    font-size: 3rem;
+    padding: 0 5rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal-content {
+    background-color: #f1f0ee;
+    padding: 2rem 4rem;
+    border: 1px solid #383B3E;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-content_header {
+    font-size: 2.5rem;
+}
+
+.modal-content_score {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.modal-content_button {
+    font-size: 1.5rem;
+    padding: 0.5rem 3rem;
+}
+
+.icon-holder {
+    font-size: 5rem;
+}
+
+.icon-holder_size_big {
+    font-size: 10rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .icon-holder {
+        font-size: 4.5rem;
+    }
+    
+    .icon-holder_size_big {
+        font-size: 9rem;
+    }
+
+    .play-result__content {
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icon-holder {
+        font-size: 3.5rem;
+    }
+    
+    .icon-holder_size_big {
+        font-size: 7rem;
+    }
+
+    .play-result__content {
+        font-size: 2.1rem;
+    }
+
+    .reset_button {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__heading {
+        font-size: 3rem;
+    }
+
+    .icon-holder {
+        font-size: 2rem;
+    }
+    
+    .icon-holder_size_big {
+        font-size: 3rem;
+    }
+
+    .play-result__content {
+        font-size: 1rem;
+    }
+
+    .reset_button {
+        font-size: 2rem;
+    }
+
+    .modal-content {
+        padding: 2rem 2rem;
+    }
+}
+
